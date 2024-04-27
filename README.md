@@ -8,7 +8,8 @@
 6.Run <pre>php artisan jwt:secret</pre>
 7.Run <pre>php artisan migrate</pre>
 7.Run <pre>php artisan serve</pre>
-8.Follow the api documentation<pre>https://documenter.getpostman.com/view/6464397/UVksMZqv
+7.Set Mail Details <pre>php artisan serve</pre>
+8.Import the postman collection 
 
 
 
