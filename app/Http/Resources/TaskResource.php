@@ -20,6 +20,7 @@ class TaskResource extends JsonResource
             'description' => $this->description,
             'tags' => json_decode($this->tags),
             'due_date' => $this->due_date,
+            'categories' => CategoryResource::collection($this->categories),
             'status'=> $this->status
         ];
     }

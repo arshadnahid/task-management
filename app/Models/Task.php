@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 class Task extends Model
 {
-   use SoftDeletes;
+    use SoftDeletes;
+
     protected $fillable = [
         'user_id',
         'title',
@@ -24,5 +25,11 @@ class Task extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+
     }
 }

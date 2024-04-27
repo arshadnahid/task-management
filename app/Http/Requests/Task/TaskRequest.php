@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Task;
 
+use App\Rules\ValidateCategoriesId;
 use App\Traits\ApiResponses;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
@@ -31,6 +32,7 @@ class TaskRequest extends FormRequest
             'status' => 'required|in:pending,completed',
             'due_date' => 'nullable|date',
             'tags' => 'nullable',
+            'category_ids' => ['nullable',new ValidateCategoriesId()],
         ];
     }
     public function failedValidation(Validator $validator)
